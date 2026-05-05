@@ -1265,9 +1265,64 @@ body::after {
     align-items: center;
     padding-top: 16px;
     border-top: 1px solid var(--qf-border);
+    gap: 12px;
+    flex-wrap: wrap;
 }
 .applicants-count {
     font-size: 12px;
+    color: var(--qf-text-light);
+}
+.opportunity-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.opportunity-action-btn {
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.opportunity-action-btn.view {
+    background: var(--qf-green);
+    color: #fff;
+}
+.opportunity-action-btn.view:hover {
+    background: var(--qf-green-dark);
+}
+.opportunity-action-btn.edit {
+    background: var(--qf-mint-pale);
+    color: var(--qf-green-dark);
+}
+.opportunity-action-btn.edit:hover {
+    background: var(--qf-mint);
+}
+.opportunity-action-btn.delete {
+    background: rgba(217, 79, 79, 0.12);
+    color: var(--qf-red);
+}
+.opportunity-action-btn.delete:hover {
+    background: rgba(217, 79, 79, 0.2);
+}
+.empty-opportunities {
+    background: var(--qf-white);
+    border-radius: 16px;
+    padding: 36px 24px;
+    text-align: center;
+    box-shadow: 0 4px 20px var(--qf-shadow);
+}
+.empty-opportunities h5 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--qf-text);
+    margin-bottom: 8px;
+}
+.empty-opportunities p {
+    font-size: 14px;
     color: var(--qf-text-light);
 }
 
