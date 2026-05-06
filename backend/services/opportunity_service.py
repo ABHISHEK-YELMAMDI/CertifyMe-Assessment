@@ -2,6 +2,15 @@ from datetime import datetime
 
 
 def validate_opportunity_payload(data):
+    allowed_categories = {
+        "Technology",
+        "Business",
+        "Design",
+        "Marketing",
+        "Data Science",
+        "Other",
+    }
+
     name = (data.get("name") or "").strip()
     duration = (data.get("duration") or "").strip()
     start_date_raw = (data.get("start_date") or "").strip()
@@ -28,6 +37,8 @@ def validate_opportunity_payload(data):
         return None, "At least one skill is required"
     if not category:
         return None, "Category is required"
+    if category not in allowed_categories:
+        return None, "Category must be one of: Technology, Business, Design, Marketing, Data Science, Other"
     if not future_opportunities:
         return None, "Future opportunities are required"
 
